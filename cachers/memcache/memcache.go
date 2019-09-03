@@ -6,7 +6,7 @@ import (
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/memcache"
 
-	"github.com/qedus/nds/v2"
+	"github.com/bashtian/nds"
 )
 
 type backend struct{}

@@ -10,7 +10,7 @@ import (
 
 	"github.com/opencensus-integrations/redigo/redis"
 
-	"github.com/qedus/nds/v2"
+	"github.com/bashtian/nds"
 )
 
 const (
@@ -102,7 +102,7 @@ func set(ctx context.Context, conn redis.ConnWithContext, nx bool, items []*nds.
 		defer close(meChan)
 
 		buf := bufPool.Get().(*bytes.Buffer)
-Loop:
+	Loop:
 		for _, item := range items {
 			select {
 			case <-ctx.Done():
@@ -136,7 +136,7 @@ Loop:
 
 	go func() {
 		defer wg.Done()
-Loop2:
+	Loop2:
 		for i := 0; i < len(items); i++ {
 			select {
 			case <-ctx.Done():
@@ -199,7 +199,7 @@ func (b *backend) CompareAndSwapMulti(ctx context.Context, items []*nds.Item) (e
 		defer close(meChan)
 
 		buf := bufPool.Get().(*bytes.Buffer)
-Loop:
+	Loop:
 		for _, item := range items {
 			select {
 			case <-ctx.Done():
@@ -230,7 +230,7 @@ Loop:
 
 	go func() {
 		defer wg.Done()
-Loop2:
+	Loop2:
 		for i := 0; i < len(items); i++ {
 			select {
 			case <-ctx.Done():

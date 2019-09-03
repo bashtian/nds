@@ -6,10 +6,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/bashtian/nds"
+	"github.com/bashtian/nds/cachers/redis"
 	redigo "github.com/opencensus-integrations/redigo/redis"
-	"github.com/qedus/nds/v2"
-
-	"github.com/qedus/nds/v2/cachers/redis"
 )
 
 var (
