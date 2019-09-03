@@ -51,9 +51,9 @@ const (
 
 func init() {
 	gob.Register(time.Time{})
-	gob.Register(&datastore.Key{})
-	gob.Register(datastore.GeoPoint{})
-	gob.Register(&datastore.Entity{})
+	gob.RegisterName("cloud/*datastore.Key", &datastore.Key{})
+	gob.RegisterName("cloud/datastore.GeoPoint", datastore.GeoPoint{})
+	gob.RegisterName("cloud/*datastore.Entity", &datastore.Entity{})
 	gob.Register([]interface{}{})
 }
 
