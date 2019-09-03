@@ -1,4 +1,4 @@
-module github.com/qedus/nds/v2
+module github.com/bashtian/nds
 
 require (
 	cloud.google.com/go v0.43.0
